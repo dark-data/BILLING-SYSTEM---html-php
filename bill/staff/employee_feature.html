@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.vertical-menu {
+    width: 200px;
+
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+#img{
+  height:200px;
+  width:200px;
+  border-radius:5px;
+}
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.vertical-menu a.logout {
+    background-color: #F03918;
+    color: white;
+}
+</style>
+</head>
+<body background="knight.png">
+<div class="vertical-menu">
+  <a href="last.html"target="last"onClick="parent.frames[1].location.href='mid.html';"class="active" style="border-radius: 5px 5px 0px 0px;">Home</a></a>
+  <a href="../bill/bpreview.html"target="last"onClick="parent.frames[1].location.href='../bill/bmid.html';">bill</a>
+
+  <a href="../"target="_parent"class="logout" style="border-radius: 0px 0px 5px 5px;">log out</a>
+</div><br>
+<div class="vertical-menu"><?php
+  $servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bill";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}//& password='$pass'
+
+$sql="select profile from log where sno = (select max(sno)from log)";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $sno=$row["profile"];
+      }
+    }echo"<img id='img' src='".$sno."'>"?>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+ <html>
+ <style>
+
+
+button:hover {opacity: 0.4;}
+
+
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 3px;
+
+}
+html { overflow-y: hidden; }
+
+table{
+    width:300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 5px;
+}
+img  {
+    border-radius: 0px 5px 0px 0px;
+
+    float: right;
+}
+div{
+border-radius: 4px;
+width:100%;
+height:8%;
+    background-color: #504d4c;
+}
+</style>
+
+ <body bgcolor="#aca5a3">
+
+
+
+
+ <form action="staffprofile.php" enctype="multipart/form-data" method="POST">
+
+ <div><h3 style="color:white;"><br>&nbsp;&nbsp;&nbsp;Add Staff</h3></div><br>
+ <input type="text" name="sname" maxlength="30" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   Staff Name"required><br><br>
+ <textarea rows="4" name="addr" maxlength="500" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   address"required></textarea><br><br>
+ <input type="number" name="mob" maxlength="10" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   mobile number"required><br><br>
+  <input type="text" name="uname" maxlength="30" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   User Name"required><br><br>
+  <input type="password" maxlength="30" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="    Password"name="psw"required>
+ <br><br>
+ <input type="file" name="fileToUpload"><br><br>
+ select role of the user :
+ <select name='utype' class='container'>
+ <?php
+ //test
+ $servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbname = "bill";
+ // Create connection
+ $conn = mysqli_connect($servername, $username, $password, $dbname);
+ // Check connection
+ if (!$conn) {
+     die("Connection failed: " . mysqli_connect_error());
+ }//& password='$pass'
+
+
+//test successful
+if(isset($_POST['act'])){
+ if($_POST['act'] == 'search'){
+ $search=$_POST['search'];
+ }
+}
+ $result = mysqli_query($conn,"SELECT DISTINCT type FROM user_accounts");
+
+
+ while($row = mysqli_fetch_array($result))
+ {
+
+ echo "<option value='".$row['type']."'>".$row['type']."</option>";
+
+}
+
+
+ mysqli_close($conn);
+ ?></select><br><br>
+  <input type="submit" style="width: 100%;background-color:#1e7903;color:white;padding: 5px 5px;display: inline-block;border: 1px solid green;border-radius: 4px;box-sizing: border-box;" name="submit" value="Sign up">
+
+
+
+
+
+  </form>
+</body>
+</html>

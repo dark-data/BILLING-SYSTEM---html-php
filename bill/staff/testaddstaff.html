@@ -1,0 +1,102 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+</head>
+<style>
+#box{
+padding: 5px 3px;
+margin: 8px 0 ;
+border: 2px solid #EBDEF0;
+border-radius: 25%;
+width: 88%;
+}
+
+button:hover {opacity: 0.4;}
+
+
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 3px;
+	background-color: #AF7AC5;
+}
+html { overflow-y: hidden; }
+
+table{
+    width:300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 5px;
+}
+img  {
+    border-radius: 0px 5px 0px 0px;
+    float: right;
+}
+</style>
+
+<body bgcolor="#5A5955">
+<form name="addstaff" method="POST" action=upload.php>
+
+<table>
+<tr>
+<td>
+<h1><font color="#57575B">Add Staff</font>
+<img src="../av.png"></h1>
+</td>
+</tr>
+<tr>
+<td>
+<form action="up.php" method="POST" enctype="multipart/form-data">
+<input type="text"style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   Staff Name"name="fname"required>
+<BR>
+</td>
+</tr>
+<tr>
+<td>
+<textarea name="addr" placeholder=" Address" rows="4" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"></textarea>
+<BR>
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="text"style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   mobile number"name="pnum"required>
+<BR>
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="text"style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   Enter Username"name="uname"required>
+<BR>
+</td>
+</tr>
+<tr>
+<td>
+<input type="password"style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="    Password"name="psw"required>
+<br><br><br>
+</td>
+</tr>
+
+<tr>
+<td>
+file location:<br /> <input type="file" id="image" name="image" ><br><br><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<button type="submit" style="width: 100%;background-color: #4CAF50;color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">Login</button>
+</td>
+</tr>
+</table>
+ 
+</form>
+</body>
+</html>

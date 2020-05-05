@@ -1,0 +1,8 @@
+<input type="file" style="display:none;" id="inputfile"/>
+<a href="javascript:document.getElementById('inputfile').click(); ">try this</a>
+
+
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+<input type="file" name="filename" value="upload photo" onchange="javascript:this.form.submit();">
+</form>

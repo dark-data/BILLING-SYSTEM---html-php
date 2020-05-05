@@ -1,0 +1,62 @@
+ <html>
+ <style>
+#box{
+padding: 5px 3px;
+margin: 8px 0 ;
+border: 2px solid #EBDEF0;
+border-radius: 25%;
+width: 88%;
+}
+
+button:hover {opacity: 0.4;}
+
+
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 3px;
+	background-color: #AF7AC5;
+}
+html { overflow-y: hidden; }
+
+table{
+    width:300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 5px;
+}
+img  {
+    border-radius: 0px 5px 0px 0px;
+    float: right;
+}
+</style>
+
+ <body>
+ 
+ 
+ 
+ 
+ <form action="pdf.php" enctype="multipart/form-data" method="POST">
+ <h1>Add Staff</h1>
+ <input type="text" name="sname" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   Staff Name"required><br><br>
+ <textarea rows="4" name="addr"style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   address"required></textarea><br><br>
+ <input type="text" name="mob" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   mobile number"required><br><br>
+  <input type="text" name="uname" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   User Name"required><br><br>
+  <input type="password"style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="    Password"name="psw"required>
+ 
+ <input type="file" name="fileToUpload"><br><br><br>
+  <input type="submit" name="submit" value="Submit article">
+
+  
+  
+  
+  
+  </form>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+<html>
+<?php
+include'viewpay.html';
+?>
+<style>
+
+
+button:hover {opacity: 0.4;}
+
+
+
+img.avatar {
+   width: 20%;
+   border-radius: 50%;
+}
+
+.container {
+  width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;
+}
+html { overflow-y: hidden; }
+
+table{
+   width:98%;
+   height: 25%;
+   border-radius: 5px;
+   background-color: #f2f2f2;
+   padding: 5px;
+}
+img  {
+   border-radius: 0px 5px 0px 0px;
+
+   float: right;
+}
+.div{
+  align: center;
+border-radius: 4px;
+width:100%;
+height:7%;
+   background-color: #504d4c;
+}
+</style>
+
+<body bgcolor="#aca5a3">
+<div class="div"><h3 style="color:white;">&nbsp;&nbsp;&nbsp;View current balance</h3></div><br>
+<form action="pay.php" method="POST">
+  <table align="center"><tr><td align="right">select the dealer name :</td><td align="left"><select name='a' class='container'>
+    <?php
+   $servername = "localhost";
+   $username = "root";
+   $password = "";
+   $dbname = "bill";
+   // Create connection
+   $conn = mysqli_connect($servername, $username, $password, $dbname);
+   // Check connection
+   if (!$conn) {
+       die("Connection failed: " . mysqli_connect_error());
+   }//& password='$pass'
+
+
+
+   $result = mysqli_query($conn,"SELECT * FROM dealer_cur_bal");
+
+
+      $rep="";
+   while($row = mysqli_fetch_array($result))
+   {
+
+   echo "<option value='".$row['name']."'>".$row['name']."</option>";
+   $rep=$row['name'];
+
+ }
+
+
+   mysqli_close($conn);
+   ?></select><input type="hidden"name="trans">
+ </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" style="width: 70%;background-color:#1e7903;color:white;padding: 5px 5px;display: inline-block;border: 1px solid green;border-radius: 4px;box-sizing: border-box;" value="view complete transaction" name="trans" /><br>
+   <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="vew"style="width: 70%;background-color:#1e7903;color:white;padding: 5px 5px;display: inline-block;border: 1px solid green;border-radius: 4px;box-sizing: border-box;"  value="view balance"></td></tr>
+  </table>
+</form>
+</html>
+
+</html>

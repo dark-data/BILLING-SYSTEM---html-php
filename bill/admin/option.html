@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.vertical-menu {
+    width: 200px;
+
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.vertical-menu a.logout {
+    background-color: #F03918;
+    color: white;
+}
+</style>
+</head>
+<body><!--background="knight.png"-->
+<div class="vertical-menu">
+  <a href="last.html"target="last"onClick="parent.frames[1].location.href='mid.html';"class="active" style="border-radius: 5px 5px 0px 0px;">Home</a></a>
+  <a href="../bill/bpreview.html"target="last"onClick="parent.frames[1].location.href='../bill/bmid.html';">bill</a>
+  <a href="../stock/lastaddstock.html"target="last"onClick="parent.frames[1].location.href='../stock/midviewstock.html';">stock</a>
+  <a href="../financemgmt/adddealer.html"target="last"onClick="parent.frames[1].location.href='../financemgmt/viewpay.html';">finance<br>management</a>
+  <a href="../bill/analyticslast.html"target="last"onClick="parent.frames[1].location.href='../bill/analytics.html';">analytics</a>
+  <a href="./addstaff.html"target="last"onClick="parent.frames[1].location.href='./manage.html';">manage account</a>
+  <a href="last.html"target="last"onClick="parent.frames[1].location.href='orgdetail.html';">organization info</a>
+  <a href="../"target="_parent"class="logout" style="border-radius: 0px 0px 5px 5px;">log out</a>
+</div><br>
+<div class="vertical-menu">
+<form action="up.php" method="post" enctype="multipart/form-data">
+<img src="profile/admin.png" alt="user profile"style='height:200px; width:200px; border-radius: 5px 5px 0px 0px;'>
+<input type="file" id="fileToUpload" name="fileToUpload" onchange="javascript:this.form.submit(); window.close();" style="display:none;"/>
+<a href="javascript:document.getElementById('fileToUpload').click(); " style="border-radius: 0px 0px 5px 5px; background-color: #4CAF50;"><font color="white">upload profile</font></a>
+</form>
+</div>
+
+</body>
+</html>

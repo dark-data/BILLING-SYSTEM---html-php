@@ -1,0 +1,74 @@
+<html>
+<style>
+
+
+button:hover {opacity: 0.4;}
+
+
+
+img.avatar {
+   width: 20%;
+   border-radius: 50%;
+}
+
+.container {
+  width: 50%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;
+}
+html { overflow-y: hidden; }
+
+table{
+   width:98%;
+   height: 75%;
+   border-radius: 5px;
+   background-color: #f2f2f2;
+   padding: 5px;
+}
+img  {
+   border-radius: 0px 5px 0px 0px;
+
+   float: right;
+}
+div{
+  align: center;
+border-radius: 4px;
+width:100%;
+height:14%;
+   background-color: #504d4c;
+}
+</style>
+
+<body bgcolor="#aca5a3">
+<div><h3 style="color:white;">&nbsp;&nbsp;&nbsp;Delete Staff</h3></div><br>
+<form action="removestaff_acc.php" method="POST">
+  <table align="center"><tr><td>
+    <?php
+   $servername = "localhost";
+   $username = "root";
+   $password = "";
+   $dbname = "bill";
+   // Create connection
+   $conn = mysqli_connect($servername, $username, $password, $dbname);
+   // Check connection
+   if (!$conn) {
+       die("Connection failed: " . mysqli_connect_error());
+   }//& password='$pass'
+
+
+
+   $result = mysqli_query($conn,"SELECT * FROM user_accounts where type!='admin'");
+
+   echo "<select name='val' class='container'>";
+
+   while($row = mysqli_fetch_array($result))
+   {
+   echo "<option value='".$row['username']."'>".$row['username']."</option>";
+   }
+   echo "</select>";
+
+   mysqli_close($conn);
+   ?>
+ </td><td></td></tr>
+    <tr><td><input type="submit" style="width: 30%;background-color:#1e7903;color:white;padding: 5px 5px;display: inline-block;border: 1px solid green;border-radius: 4px;box-sizing: border-box;" name="submit" value="Remove Account"></td><td></td></tr>
+  </table>
+</form>
+</html>

@@ -1,0 +1,66 @@
+ <html>
+ <style>
+
+
+button:hover {opacity: 0.4;}
+
+
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 3px;
+	background-color: #AF7AC5;
+}
+html { overflow-y: hidden; }
+
+table{
+    width:300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 5px;
+}
+img  {
+    border-radius: 0px 5px 0px 0px;
+
+    float: right;
+}
+div{
+border-radius: 4px;
+width:100%;
+height:8%;
+    background-color: #504d4c;
+}
+</style>
+
+ <body bgcolor="#aca5a3">
+
+
+
+
+ <form action="add.php" enctype="multipart/form-data" method="POST">
+ <div><h3 style="color:white;"><br>&nbsp;&nbsp;&nbsp;Add dealer</h3></div><br>
+ <input type="text" name="dname" maxlength="30" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   dealer Name"required><br><br>
+ <input type="text" name="company" maxlength="50" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   company or textile"required><br><br>
+ <textarea rows="4" name="addr" maxlength="75" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   address"required></textarea><br><br>
+ <input type="number" name="mob" max="9999999999" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   mobile number"required><br><br>
+  <input type="text" name="adinfo" maxlength="50" style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="   additional information"required><br><br>
+  <input type="number"style="width: 100%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"placeholder="    amount for products purchased" max="9999999" name="amt"required>
+  <input type="radio" name="status" value="paid" checked> paid
+  <input type="radio" name="status" value="not-paid"> not paid<br>
+ <br><br><font color="white">upload bill:</font><br><br>
+ <input type="file" name="fileToUpload"><br><br>
+  <input type="submit" style="width: 100%;background-color:#1e7903;color:white;padding: 5px 5px;display: inline-block;border: 1px solid green;border-radius: 4px;box-sizing: border-box;" name="submit" value="Sign up">
+
+
+
+
+
+  </form>
+</body>
+</html>

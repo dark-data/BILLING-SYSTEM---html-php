@@ -1,0 +1,92 @@
+<html>
+<?php include'option.html';
+//need tom do
+?>
+<script> function btn_reset() { parent.last.location.reload(); } </script>
+<style>
+
+
+button:hover {opacity: 0.4;}
+
+
+
+.container {
+  width: 80%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;
+}
+html { overflow-y: hidden; }
+
+table{
+   width:98%;
+   height: 20%;
+   border-radius: 5px;
+   background-color: #f2f2f2;
+   padding: 5px;
+}
+
+</style>
+<br><br>
+<table align="center">
+  <tr><form name="prod" method="POST" action="add.php">
+    <td align="center">product id:</td>
+    <td><input type="number" style="width: 80%;    padding: 12px 20px;    margin: 8px 0;    display: inline-block;    border: 1px solid #ccc;    border-radius: 4px;    box-sizing: border-box;"placeholder="    enter the product id " name="pid" min="1" max="9999999999999999999999999" autofocus required> <br>(scan product using barcode scanner)</td>
+    <td><input type="number" style="width: 80%;    padding: 12px 20px;    margin: 8px 0;    display: inline-block;    border: 1px solid #ccc;    border-radius: 4px;    box-sizing: border-box;"placeholder="    quantity " min="1"max="100" name="qt"><br><input type="hidden" name="act" value="addone"/>
+    <button type="submit" onclick="btn_reset()" style="width: 100%;background-color: #4CAF50;color: white;padding: 5px 3px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">add product</button></td>
+  </form></tr>
+</table><br>
+
+<table align="center">
+  <tr><form name="up" method="POST" action="bmid.html">
+    <td align="center">Search Product:<input type="hidden" name="act" value="search"/></td>
+    <td><div onKeyPress="return myFunction(event)"><input type="text" maxlength="30" style="width: 80%;    padding: 12px 20px;    margin: 8px 0;    display: inline-block;    border: 1px solid #ccc;    border-radius: 4px;    box-sizing: border-box;"placeholder="    enter the key word for the product looking for " name="search" required></div></td>
+    <td></td>
+  </form></tr>
+
+  <tr><form name="asdf" method="post" action="add.php">
+    <td>select product : </td>
+    <td><br><input type="hidden" name="act" value="addtwo"/>
+    <select name='dnam' class='container'>
+    <?php
+    //test
+    $search='';
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "bill";
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }//& password='$pass'
+
+
+//test successful
+if(isset($_POST['act'])){
+    if($_POST['act'] == 'search'){
+		$search=$_POST['search'];
+    }
+  }
+    $result = mysqli_query($conn,"SELECT * FROM product_details where product_name like '%$search%'");
+
+
+    while($row = mysqli_fetch_array($result))
+    {
+
+    echo "<option value='".$row['product_name']."'>".$row['product_name']."</option>";
+
+   }
+
+
+    mysqli_close($conn);
+    ?></select><br><br>
+</td><td></td></tr><tr><td>quantity (qty) : </td><td><input type="number" min="1"max="100" style="width: 50%;    padding: 12px 20px;    margin: 8px 0;    display: inline-block;    border: 1px solid #ccc;    border-radius: 4px;    box-sizing: border-box;"placeholder="    quantity " name="qty" required></td>
+<td><button type="submit" onclick="btn_reset()" style="width: 80%;background-color: #4CAF50;color: white;padding: 5px 3px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">add product</button>&nbsp;&nbsp;&nbsp;</td></tr></table><br><br></form>
+
+
+discount form //remove this line after completed
+<table style="width=50%;"><tr><form method="post" action="add.php"><td>total :</td><td> value from bill_temp</td></tr>
+<tr><td>discount (in terms of %) : </td><td><input type="hidden" name="act" value="discount"/><input type="number"min="1" max="99" style="width: 50%;    padding: 12px 20px;    margin: 8px 0;    display: inline-block;    border: 1px solid #ccc;    border-radius: 4px;    box-sizing: border-box;"placeholder="   discount value (%)" name="dis" required></td>
+<td><button type="submit" onclick="btn_reset()" style="width: 80%;background-color: #4CAF50;color: white;padding: 5px 3px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;">apply discount</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></table><br><br></form>
+
+
+</html>

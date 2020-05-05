@@ -1,0 +1,50 @@
+<html>
+<style>
+
+
+button:hover {opacity: 0.4;}
+
+
+
+.container {
+  width: 80%;padding: 5px 5px;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;
+}
+html { overflow-y: hidden; }
+
+table{
+   width:98%;
+   height: 20%;
+   border-radius: 5px;
+   background-color: #f2f2f2;
+   padding: 0px;
+}
+
+.div{
+  align: center;
+border-radius: 4px;
+width:100%;
+height:7%;
+   background-color: #504d4c;
+}
+</style>
+
+
+
+
+
+
+
+<br><br><form name="type" method="POST" action="analytics.php">
+  <table align="center"><tr>
+    <td align="center">select report type</td>
+    <td>  <br>
+      <select name='report' class='container' onchange="this.form.submit()">
+        <option value='null' selected>--select--</option>
+        <option value='year'>annual report</option>
+        <option value='month'>monthly report</option>
+        <option value='date'>date customized</option>
+      </select><br><br>
+    </td>
+    <td><input type="hidden" name="formaction" value="typesubmit"><button type="submit" style="visibility: hidden;">view report</button></td>
+  </tr>
+  </form>
