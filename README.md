@@ -24,21 +24,21 @@ The supermarket maintenance ERP software allows us to do the following
 # MODULES
 **Notification of insufficient stock module.**
 **Normal employee:**
-• Generate bill module
+- Generate bill module
 **Stock manager:**
-• Generate bill module
-• View and update stock module
-• Add product module
-• Update product details module
+- Generate bill module
+- View and update stock module
+- Add product module
+- Update product details module
 **Admin:**
-• Generate bill module
-• View and update stock module
-• Add product module
-• Update product details module
-• Auditing payments and adding supplier module
-• Sales report module
-• User account management module
-• Organization information module
+- Generate bill module
+- View and update stock module
+- Add product module
+- Update product details module
+- Auditing payments and adding supplier module
+- Sales report module
+- User account management module
+- Organization information module
 
 ![image](https://user-images.githubusercontent.com/64268236/81072976-96bf9300-8f04-11ea-8c4e-8c924c735f81.png)
 
