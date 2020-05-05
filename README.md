@@ -22,15 +22,15 @@ The supermarket maintenance ERP software allows us to do the following
 -Maintaining the profit and loss of the enterprise.
 
 # MODULES
-**Notification of insufficient stock module.**
-**Normal employee:**
+- **Notification of insufficient stock module.**
+- **Normal employee:**
 - Generate bill module
-**Stock manager:**
+- **Stock manager:**
 - Generate bill module
 - View and update stock module
 - Add product module
 - Update product details module
-**Admin:**
+- **Admin:**
 - Generate bill module
 - View and update stock module
 - Add product module
